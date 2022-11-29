@@ -44,6 +44,7 @@ $_SESSION['essaie']=5;
 
             if ($_SESSION['essaie']==0){
                 echo "c'est perdu";
+                session_destroy();
             }
         }
             elseif ($_GET['action-guess'] < $_SESSION['alea']){
@@ -52,14 +53,16 @@ $_SESSION['essaie']=5;
 
                 if ($_SESSION['essaie']==0){
                     echo "c'est perdu";
+                    session_destroy();
                 }
             }
             elseif ($_GET['action-guess'] > $_SESSION['alea']) {
                 echo "C'est moins";
                 $_SESSION['essaie']--;
-                
+
                 if ($_SESSION['essaie']==0){
                     echo "c'est perdu";
+                    session_destroy();
                 }
             }
             
@@ -67,7 +70,7 @@ $_SESSION['essaie']=5;
         else{
             echo "met un chiffre";}
         
-        
+        session_destroy();
         ?>
     </body>
     </html>
