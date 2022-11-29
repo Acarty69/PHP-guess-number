@@ -35,7 +35,10 @@ $_SESSION['essaie']=5;
         </form>
         <?php
         
-
+        file_put_contents('test.txt',$_GET['action-guess'],FILE_APPEND);
+        $test=file_get_contents('test.txt');
+        echo $test;
+        
         if (isset( $_GET['action-guess']))
         {
         if ($_GET['action-guess'] ==  $_SESSION['alea']){
